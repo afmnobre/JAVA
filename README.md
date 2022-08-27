@@ -1,1 +1,2 @@
-# JAVA (Exercícios e Estudos - JAVA)    
+# JAVA (Exercícios e Estudos - JAVA)
+# Change directory structure

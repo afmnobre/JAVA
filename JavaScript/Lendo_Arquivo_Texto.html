@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset=UTF-8>
+	<title>Manual de Instalação </title>
+</head>
+<body>
+	<h1>LER UM ARQUIVO DE TEXTO EXTERNO OU INTERNO, SEPARAR O CAMPO POR ESPAÇOS E COLOCA-LO NUMA TABELA HTML</h1>
+    <h4>Meu Microblog - TWTXT</h4>
+	<pre id="fileContent"></pre>
+    <div id="conteudo"></div>
+
+	<script type="text/javascript">
+	  const fileName = "https://vaporhole.xyz/~afmnobre/twtxt.txt";
+	  fetch(fileName)
+		.then(response => {
+			if (!response.ok) {
+				throw new Error ('Não foi possivel carregar o Arquivo!');
+			}
+			return response.text();
+		})
+		.then(text => {
+			textContent = text
+
+            // Divide o texto em linhas
+            const linhas = text.split('\n');
+
+            // Cria uma tabela HTML
+            const table = document.createElement('table');
+            table.border = '1';
+
+            //Percorre as linhas e cria as linhas da tabela
+            linhas.forEach((linha) => {
+            const [data, mensagem] = linha.split('\t');
+              if (data && mensagem) {
+                 const row = table.insertRow();
+                 const cell1 = row.insertCell(0);
+                 const cell2 = row.insertCell(1);
+               cell1.textContent = data;
+               cell2.textContent = mensagem;
+            }
+            });
+
+            // Adiciona a tabela ao elemento com id "conteudo"
+            const conteudo = document.getElementById('conteudo');
+            conteudo.appendChild(table);
+		})
+		.catch(error => {
+			console.error('ERRO:', error);
+		});
+	</script>
+</body>
+</html>
+

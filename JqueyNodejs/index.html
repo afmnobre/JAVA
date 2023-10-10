@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guestbook</title>
+</head>
+<body>
+    <h1>Guestbook</h1>
+    <form id="guestbook-form">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required><br>
+        
+        <label for="comment">Comentário:</label>
+        <textarea id="comment" name="comment" required></textarea><br>
+        
+        <input type="submit" value="Enviar">
+    </form>
+
+    <div id="guestbook-messages">
+        <!-- Aqui serão exibidas as mensagens -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="guestbook.js"></script>
+</body>
+</html>
+

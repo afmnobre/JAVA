@@ -1,5 +1,5 @@
 import java.util.Locale;
-public class App {
+public class Exercicio1 {
     public static void main(String[] args) throws Exception {
         String product1 = "Computer";
         String product2 = "Office desk";

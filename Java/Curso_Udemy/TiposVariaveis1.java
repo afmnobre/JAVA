@@ -1,4 +1,4 @@
-public class Exemplo2 {
+public class TiposVariaveis1 {
     public static void main(String[] args) {
         int a, b;
         double resultado;

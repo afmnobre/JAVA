@@ -29,5 +29,20 @@ public class FuncoesMatematicas1 {
     System.out.println("Valor absoluto de " + y + " = " + A);
     System.out.println("Valor absoluto de " + z + " = " + B);
 
+    System.out.println("###############################################");
+    System.out.println("Função que faz a Raiz Quadrada");
+    double DELTA, X1, X2, a, b, c;
+    a = 2.0;
+    b = -16.0;
+    c = -18.0;
+
+    DELTA = Math.pow(b, 2.0) - 4 * a * c;
+    X1 = (-b + Math.sqrt(DELTA)) / (2.0 * a);
+    X2 = (-b - Math.sqrt(DELTA)) / (2.0 * a);
+    System.out.printf("O Valor de DELTA é: %.2f%n", DELTA);
+    System.out.printf("O Valor de X1 é: %.2f%n", X1);
+    System.out.printf("O Valor de X2 é: %.3f%n", X2);
+
+
     }
 }

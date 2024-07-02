@@ -27,6 +27,19 @@ public class FuncoesRepetitivas1 {
     System.out.println("O VALOR SOMADO É = " + SOMA);
     System.out.printf("############################################%n");
 
+    System.out.println("FOR - DIGITE A QUANTIDADE DE NUMEROS que vc ira digitar e SOMAR.");
+    System.out.printf("DIGITE A QUANTIDADE DE TERMOS QUE SERÃO SOMADOS = ");
+    int QUANTIDADE = sc.nextInt();
+    int SOMAR = 0;
+    for (int NUM = 0; NUM < QUANTIDADE; NUM++){
+        System.out.printf("%d - DIGITE UM NUMERO = ", NUM+1);
+        int B = sc.nextInt();
+        SOMAR = SOMAR + B;
+    }
+    System.out.printf("A SOMA DOS VALORES é = %d ", SOMAR);
+    System.out.printf("############################################%n");
+
+
     sc.close();
     }
 }

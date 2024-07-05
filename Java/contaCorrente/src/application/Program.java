@@ -12,15 +12,15 @@ public class Program {
 		Account account;
 		
 		
-		System.out.println("Enter account numer: ");
+		System.out.print("Enter account number: ");
 		int number = sc.nextInt();
-		System.out.println("Enter account holder: ");
+		System.out.print("Enter account holder: ");
 		sc.nextLine();
 		String holder = sc.nextLine();
-		System.out.println("Is there an initial deposit (y/n)? ");
+		System.out.print("Is there an initial deposit (y/n)? ");
 		char response = sc.next().charAt(0);
 		if (response == 'y') {
-			System.out.println("Enter initial deposit value: ");
+			System.out.print("Enter initial deposit value: ");
 			double initialDeposit = sc.nextDouble();
 			account = new Account(number, holder, initialDeposit);
 		}else {
@@ -28,6 +28,20 @@ public class Program {
 		}
 		System.out.println();
 		System.out.println("Account data:");
+		System.out.println(account);
+		
+		System.out.println();
+		System.out.print("Enter a deposit value: ");
+		double depositValue = sc.nextDouble();
+		account.deposit(depositValue);
+		System.out.println("Update account data:");
+		System.out.println(account);
+		
+		System.out.println();
+		System.out.print("Enter a withdraw value: ");
+		double withDrawValue = sc.nextDouble();
+		account.withdraw(withDrawValue);
+		System.out.println("Update account data:");
 		System.out.println(account);
 		
 		sc.close();

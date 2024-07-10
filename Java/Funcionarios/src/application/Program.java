@@ -24,6 +24,13 @@ public class Program {
 			System.out.println("Employee #" + (i+1) + ":");
 			System.out.print("Id: ");
 			Integer id = sc.nextInt();
+			
+			while(hasId(list, id)) {
+				System.out.println("Id already taken! Try again: ");
+				System.out.print("Id: ");
+				id = sc.nextInt();
+			}
+			
 			System.out.print("Name: ");
 			sc.nextLine(); //NextInt sempre da um ENTER e da quebra de linha
 			String name = sc.nextLine();
@@ -39,21 +46,23 @@ public class Program {
 		System.out.print("Enter the employee id that will have salary increase: ");
 		int idSalary = sc.nextInt();
 		
-		Employee emp = list.stream.filter(x -> x.getId() == idSalary).findFirst().orElse(null);
-		//Integer pos = position(list, idSalary);
+		Employee emp = list.stream().filter(x -> x.getId() == idSalary).findFirst().orElse(null); // EXEMPLO 2
+		//Integer pos = position(list, idSalary); //               EXEMPLO 1
 		
-		if(pos == null) {
+		//if(pos == null) { //                                     EXEMPLO 1
+		if(emp == null) { //                                       EXEMPLO 2
 			System.out.println("This id does not exist!");
 		}else {
 			System.out.print("Enter the percentage: ");
 			double percent = sc.nextDouble();
-			list.get(pos).increaseSalary(percent);
+			emp.increaseSalary(percent); //                        EXEMPLO 2
+			//list.get(pos).increaseSalary(percent); //            EXEMPLO 1
 		}
 		
 		System.out.println();
 		System.out.println("List of employess:");
-		for(Employee emp : list) {
-			System.out.println(emp);
+		for(Employee e : list) {
+			System.out.println(e);
 		}
 		
 		sc.close();
@@ -66,6 +75,11 @@ public class Program {
 			}
 		}
 		return null;
+	}
+	
+	public static boolean hasId(List<Employee> list, int id) {
+		Employee emp = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+		return emp != null;
 	}
 
 }

@@ -47,5 +47,4 @@ public class Employee {
 		public String toString(){
 			return id + ", " + name + ", "+ String.format("%.2f",salary);
 		}
-
 }

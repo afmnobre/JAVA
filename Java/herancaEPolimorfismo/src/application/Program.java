@@ -33,7 +33,15 @@ public class Program {
 			System.out.println("Update!");
 		}
 		
+		//Teste de OVERRIDE de metodo de função herdada;
 		
+		Account acc6 = new Account(1006,"Lucas", 1000.0);
+		acc6.withDraw(200.0);
+		System.out.println("Instancia de Account: " + acc6.getBalance());
+		
+		Account acc7 = new SavingsAccount(1007,"Marta",1000.0,0.01);
+		acc7.withDraw(200.0);
+		System.out.println("Instancia de SavingsAccount: " + acc7.getBalance());
 	}
 
 }

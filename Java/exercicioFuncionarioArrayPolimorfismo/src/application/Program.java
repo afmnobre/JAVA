@@ -20,6 +20,7 @@ public class Program {
 		System.out.print("Entre com o número de funcionarios: ");
 		int numero = sc.nextInt();
 		
+		System.out.println();
 		for (int i=1; i<=numero;i++ ) {
 			System.out.println("Funcionário #" + i + " informações: ");
 			System.out.print("Terceirizado (s/n)? ");
@@ -36,11 +37,13 @@ public class Program {
 				 Double despesaAdicional = sc.nextDouble();
 				 Funcionario func = new FuncionarioTerceirizado(nome, valorPorHora, horas, despesaAdicional);
 				 lista.add(func);
-			}else {
+			} else {
 				Funcionario func = new Funcionario(nome, valorPorHora, horas);
 				lista.add(func);
-				//PODE SER USADO TBM ASSIM COMO ABAIXO:
-				//lista.add(new Funcionario(nome, valorPorHora, horas));
+				/*
+				 PODE SER USADO TBM ASSIM COMO ABAIXO: (Sem instanciar o Funcionario)
+				 	lista.add(new Funcionario(nome, valorPorHora, horas));
+				*/
 			}
 			System.out.println();
 		}

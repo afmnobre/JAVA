@@ -1,8 +1,6 @@
 package entities;
 
-import entitites.Account;
-
-public class SavingsAccount extends Account {
+public final class SavingsAccount extends Account {
 
 	private double interestRate;
 	

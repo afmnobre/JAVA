@@ -1,7 +1,7 @@
 package application;
 
+import entities.Account;
 import entities.BusinessAccount;
-import entitites.Account;
 import entities.SavingsAccount;
 
 public class Program {
@@ -15,7 +15,7 @@ public class Program {
 		Account acc1 = bacc;
 		Account acc2 = new BusinessAccount(1003,"Bob",0.0,200.0);
 		Account acc3 = new SavingsAccount(1004, "Anna", 0.0, 0.01);
-
+		
 		//DOWNCASTING
 		BusinessAccount acc4 = (BusinessAccount)acc2;
 		acc4.Loan(100.0);
@@ -37,11 +37,17 @@ public class Program {
 		
 		Account acc6 = new Account(1006,"Lucas", 1000.0);
 		acc6.withDraw(200.0);
-		System.out.println("Instancia de Account: " + acc6.getBalance());
+		System.out.println("Método withDraw - Instancia de Account: " + acc6.getBalance());
 		
 		Account acc7 = new SavingsAccount(1007,"Marta",1000.0,0.01);
 		acc7.withDraw(200.0);
-		System.out.println("Instancia de SavingsAccount: " + acc7.getBalance());
+		System.out.println("Método withDraw - Instancia de SavingsAccount: " + acc7.getBalance());
+
+		Account acc8 = new BusinessAccount(1006,"Lucas",1000.0,500.0);
+		acc8.withDraw(200.0);
+		System.out.println("Método withDraw - Instancia de BusinessAccount: " + acc8.getBalance());
+		
+	
 	}
 
 }

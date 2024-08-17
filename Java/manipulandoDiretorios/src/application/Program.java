@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.Scanner;
 
 public class Program {
-
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
@@ -28,10 +27,24 @@ public class Program {
 		//Criando Diretório
 		boolean success = new File(strPath + "/subdir").mkdir();
 		System.out.println("Directory created sucess " + success);
+		
+		System.out.println();
+		System.out.println("-------------------------------------");
+		System.out.println();
+		
+		//TRAZENDO INFORMAÇÕES:
+		
+		String caminhoDoArquivo = "/home/lucas/in.txt";		
+		File arquivo = new File(caminhoDoArquivo);
+		
+		//Nome:
+		System.out.println("getName: " + arquivo.getName());
+		//Caminho:
+		System.out.println("getParent: " + arquivo.getParent());
+		//Path:
+		System.out.println("getPath: " + arquivo.getPath());
 				
-				
-				
+		
 		sc.close();
 	}
-
 }
